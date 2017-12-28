@@ -1,0 +1,1448 @@
+* token
+ EAADg6b3wfpUBADrXvI2gZCjQuZCnCPNVvml6KWZCeNtR9X8pxZBYKuZBw9tXEHR8wo9DJTHqDQyCZBcZBGQ5TPNn1YYZAVSy7haHfNus53XZCwrOrZAkhjEwWjhUVV6mPZAQ8vxZANIYevYGRDvIYjPPHTA8ww5b3ynRonXoovgKhqjnE8CylU4ZAxTpY
+
+* request
+** options
+#+BEGIN_SRC sh :results pp
+http options https://api.happn.fr/api
+#+END_SRC
+#+RESULTS:
+: {"success":true,"status":200,"error":null,"data":{"sso":{"facebook":{"enable":true},"vk":{"enable":false}},"report_types":[{"id":"10404","name":"Bad behavior","description":"Bad behavior","level":1},{"id":"10403","name":"Fake profile","description":"Fake profile","level":1},{"id":"10408","name":"Commercial profile","description":"Commercial profile","level":3},{"id":"10406","name":"Inapropriate picture","description":"Inappropriate picture","level":4},{"id":"10405","name":"Scam","description":"Scam","level":4},{"id":"10407","name":"Underage","description":"Underage","level":5}],"achievement_types":[{"id":"533","status":1,"name":"FACEBOOK_CONNECT","creation_date":"2013-11-12","credits":0,"max_times":1},{"id":"534","status":1,"name":"FACEBOOK_LIKE","creation_date":"2013-11-12","credits":0,"max_times":1},{"id":"535","status":1,"name":"UPDATE_PICTURE","creation_date":"2013-11-12","credits":0,"max_times":5},{"id":"536","status":1,"name":"RATE_APP","creation_date":"2013-11-12","credits":0,"max_times":1},{"id":"537","status":1,"name":"INVITE","creation_date":"2013-11-12","credits":5,"max_times":1000},{"id":"538","status":1,"name":"NEW_ACCOUNT","creation_date":"2013-11-12","credits":10,"max_times":1},{"id":"791","status":1,"name":"SOCIAL_LIKE","creation_date":"2016-03-31","credits":0,"max_times":1},{"id":"792","status":1,"name":"START_TUTORIAL","creation_date":"2016-08-02","credits":0,"max_times":1},{"id":"793","status":1,"name":"TUTORIAL_LIKE_PROFILE","creation_date":"2016-08-02","credits":0,"max_times":2},{"id":"794","status":1,"name":"TUTORIAL_STEP_2","creation_date":"2016-08-02","credits":0,"max_times":1},{"id":"795","status":1,"name":"TUTORIAL_CHARM_PROFILE","creation_date":"2016-08-02","credits":1,"max_times":1},{"id":"796","status":1,"name":"END_TUTORIAL","creation_date":"2016-08-02","credits":0,"max_times":1},{"id":"797","status":1,"name":"NESCAFE_START","creation_date":"2016-08-29","credits":0,"max_times":1},{"id":"798","status":1,"name":"NESCAFE_END","creation_date":"2016-08-29","credits":0,"max_times":1},{"id":"799","status":1,"name":"COCA_COLA","creation_date":"2017-04-19","credits":0,"max_times":1}],"availability_types":[{"type":"DINNER","picto":{"id":"picto_DINNER","url":"https:\/\/static.happn.com\/availability-types\/icon-food-90.png","width":90,"height":90},"label":"Grab a bite","color":"#ff6e70","emoji":"\ud83c\udf54","duration":21600},{"type":"RUN","picto":{"id":"picto_RUN","url":"https:\/\/static.happn.com\/availability-types\/icon-sport-90.png","width":90,"height":90},"label":"RUN_label","color":"#fcd04c","emoji":"","duration":21600},{"type":"DRINK","picto":{"id":"picto_DRINK","url":"https:\/\/static.happn.com\/availability-types\/icon-drink-90.png","width":90,"height":90},"label":"DRINK_label","color":"#9591ed","emoji":"","duration":21600},{"type":"CINEMA","picto":{"id":"picto_CINEMA","url":"https:\/\/static.happn.com\/availability-types\/icon-movie-90.png","width":90,"height":90},"label":"CINEMA_label","color":"#4ebedb","emoji":"","duration":21600},{"type":"PARTY","picto":{"id":"picto_PARTY","url":"https:\/\/static.happn.com\/availability-types\/icon-party-90.png","width":90,"height":90},"label":"PARTY_label","color":"#06d6a0","emoji":"","duration":21600},{"type":"WALK","picto":{"id":"picto_WALK","url":"https:\/\/static.happn.com\/availability-types\/icon-walk-90.png","width":90,"height":90},"label":"WALK_label","color":"#ffa665","emoji":"\ud83d\udc2a\ud83d\udc2a","duration":21600}],"ads_inventory":null,"shop_template":1,"last_tos_version":"9cc435b0-8e28-11e7-9e90-bd58f0bd14d7","shop":[],"say_hi":{"send_message_enable":false},"crush_time":null,"charms_sent":{"enable":true},"timeline":{"rule_version":2,"version":2}},"error_code":0}
+
+** my profile
+#+BEGIN_SRC sh :results scalar
+http get https://api.happn.fr/api/users/22029975014 authorization:OAuth=\"eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAACXLQQuCMBjG8e_ynh1sr5tz3kIMQgQhPESEzE1hobhSo4i-e4suz-HH83_DYmbfQ3aGae7c2Lfae7hEcF0dZIBKoKJoCUprCFeGkbSzOszAO50Iy1FBBMvW_c5IUSkpKOPB9GaD7ZuCOHssajLI3S1_bZWp71gS5vJD057GR0kq4qbYhKJ_esiYYFykMUMagdPrH7hKJNLPF1fPTf-tAAAA.TuMSWvu826Z9d94h2Ej_bVHWwb2YFbdWZPlEfAKi_IM\"
+#+END_SRC
+
+#+RESULTS:
+: {"success":true,"status":200,"error":null,"data":{"id":"22029975014","fb_id":"10215682107552713","twitter_id":null,"role":"CLIENT","type":"client","clickable_message_link":false,"name":"Vincent","first_name":"Vincent","nickname":null,"display_name":"Vincent","gender":"male","workplace":"TheFaktory","distance":null},"error_code":0}
+
+** notifications empty
+#+BEGIN_SRC sh :results scalar
+http get https://api.happn.fr/api/users/22029975014/notifications authorization:OAuth=\"eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAACXLQQuCMBjG8e_ynh1sr5tz3kIMQgQhPESEzE1hobhSo4i-e4suz-HH83_DYmbfQ3aGae7c2Lfae7hEcF0dZIBKoKJoCUprCFeGkbSzOszAO50Iy1FBBMvW_c5IUSkpKOPB9GaD7ZuCOHssajLI3S1_bZWp71gS5vJD057GR0kq4qbYhKJ_esiYYFykMUMagdPrH7hKJNLPF1fPTf-tAAAA.TuMSWvu826Z9d94h2Ej_bVHWwb2YFbdWZPlEfAKi_IM\"
+#+END_SRC
+
+#+RESULTS:
+: {"success":true,"status":200,"error":null,"data":[{"id":"22029975022","creation_date":"2017-12-26T22:03:37+00:00","notifier":{"id":"2"},"notification_type":"WIN_RATING_APP"},{"id":"22029975020","creation_date":"2017-12-26T22:03:37+00:00","notifier":{"id":"2"},"notification_type":"WIN_INVITE"},{"id":"22029975021","creation_date":"2017-12-26T22:03:37+00:00","notifier":{"id":"2"},"notification_type":"WIN_LIKE_PAGE"},{"id":"22029975018","creation_date":"2017-12-26T22:03:37+00:00","notifier":{"id":"2"},"notification_type":"REWARD_NEW_ACCOUNT"}],"error_code":0}
+
+** notifications
+#+BEGIN_SRC sh :results scalar
+http get https://api.happn.fr/api/users/22029975014/notifications authorization:OAuth=\"eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAACXLQQuCMBjG8e_ynh1sr5tz3kIMQgQhPESEzE1hobhSo4i-e4suz-HH83_DYmbfQ3aGae7c2Lfae7hEcF0dZIBKoKJoCUprCFeGkbSzOszAO50Iy1FBBMvW_c5IUSkpKOPB9GaD7ZuCOHssajLI3S1_bZWp71gS5vJD057GR0kq4qbYhKJ_esiYYFykMUMagdPrH7hKJNLPF1fPTf-tAAAA.TuMSWvu826Z9d94h2Ej_bVHWwb2YFbdWZPlEfAKi_IM\" types==468 
+#+END_SRC
+
+* notifications parse
+** raw
+#+BEGIN_SRC sh :results scalar
+cat /home/vince/projects/happnless/stuff/minetes.json
+#+END_SRC
+#+RESULTS:
+#+begin_example
+{
+    "success": true,
+    "status": 200,
+    "error": null,
+    "data": [
+        {
+            "id": "22029975014_21925160549",
+            "creation_date": "2017-12-28T16:26:30+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21925160549",
+                "fb_id": "1542826415799083",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.5686451,
+                    "lon": 5.5810082,
+                    "creation_date": "2017-12-28T16:26:30+00:00",
+                    "modification_date": "2017-12-28T16:26:30+00:00"
+                },
+                "name": null,
+                "first_name": "Chaimaa",
+                "nickname": null,
+                "display_name": "Chaimaa",
+                "gender": "female",
+                "workplace": null,
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.5686451",
+            "lon": "5.5810082"
+        },
+        {
+            "id": "22029975014_21553708506",
+            "creation_date": "2017-12-28T16:26:30+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21553708506",
+                "fb_id": "10208526781191961",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.5686451,
+                    "lon": 5.5810082,
+                    "creation_date": "2017-12-28T16:26:30+00:00",
+                    "modification_date": "2017-12-28T16:26:30+00:00"
+                },
+                "name": null,
+                "first_name": "Léa",
+                "nickname": null,
+                "display_name": "Léa",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.5686451",
+            "lon": "5.5810082"
+        },
+        {
+            "id": "22029975014_21234073809",
+            "creation_date": "2017-12-28T16:26:30+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21234073809",
+                "fb_id": "281248465605578",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.5686451,
+                    "lon": 5.5810082,
+                    "creation_date": "2017-12-28T16:26:30+00:00",
+                    "modification_date": "2017-12-28T16:26:30+00:00"
+                },
+                "name": null,
+                "first_name": "Odissey",
+                "nickname": null,
+                "display_name": "Odissey",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.5686451",
+            "lon": "5.5810082"
+        },
+        {
+            "id": "22029975014_19625280757",
+            "creation_date": "2017-12-28T16:26:30+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "19625280757",
+                "fb_id": "10210199405045731",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.5686451,
+                    "lon": 5.5810082,
+                    "creation_date": "2017-12-28T16:26:30+00:00",
+                    "modification_date": "2017-12-28T16:26:30+00:00"
+                },
+                "name": null,
+                "first_name": "Cyrielle",
+                "nickname": null,
+                "display_name": "Cyrielle",
+                "gender": "female",
+                "workplace": "Silva Hotel Spa-Balmoral",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.5686451",
+            "lon": "5.5810082"
+        },
+        {
+            "id": "22029975014_19430932542",
+            "creation_date": "2017-12-28T10:22:13+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "19430932542",
+                "fb_id": "1760406250877480",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.5939,
+                    "lon": 5.561365,
+                    "creation_date": "2017-12-28T10:22:13+00:00",
+                    "modification_date": "2017-12-28T10:22:13+00:00"
+                },
+                "name": null,
+                "first_name": "Sylvia",
+                "nickname": null,
+                "display_name": "Sylvia",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.5939",
+            "lon": "5.561365"
+        },
+        {
+            "id": "22029975014_21825431650",
+            "creation_date": "2017-12-28T09:20:53+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21825431650",
+                "fb_id": "10209491766512542",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.5939006,
+                    "lon": 5.561365,
+                    "creation_date": "2017-12-28T09:20:53+00:00",
+                    "modification_date": "2017-12-28T09:20:53+00:00"
+                },
+                "name": null,
+                "first_name": "Florine",
+                "nickname": null,
+                "display_name": "Florine",
+                "gender": "female",
+                "workplace": "CHU de Liège",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.5939006",
+            "lon": "5.561365"
+        },
+        {
+            "id": "22029975014_18977599035",
+            "creation_date": "2017-12-28T09:20:53+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "18977599035",
+                "fb_id": "443757229167831",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.5939006,
+                    "lon": 5.561365,
+                    "creation_date": "2017-12-28T09:20:53+00:00",
+                    "modification_date": "2017-12-28T09:20:53+00:00"
+                },
+                "name": null,
+                "first_name": "Priscilla",
+                "nickname": null,
+                "display_name": "Priscilla",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.5939006",
+            "lon": "5.561365"
+        },
+        {
+            "id": "22029975014_21201578436",
+            "creation_date": "2017-12-28T06:14:09+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21201578436",
+                "fb_id": "10208753617413678",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.568645,
+                    "lon": 5.5810084,
+                    "creation_date": "2017-12-28T06:14:09+00:00",
+                    "modification_date": "2017-12-28T06:14:09+00:00"
+                },
+                "name": null,
+                "first_name": "Amandine",
+                "nickname": null,
+                "display_name": "Amandine",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.568645",
+            "lon": "5.5810084"
+        },
+        {
+            "id": "22029975014_21000337629",
+            "creation_date": "2017-12-28T03:22:20+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21000337629",
+                "fb_id": "10209883443181895",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.568645,
+                    "lon": 5.5810084,
+                    "creation_date": "2017-12-28T03:22:20+00:00",
+                    "modification_date": "2017-12-28T03:22:20+00:00"
+                },
+                "name": null,
+                "first_name": "Sophie",
+                "nickname": null,
+                "display_name": "Sophie",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.568645",
+            "lon": "5.5810084"
+        },
+        {
+            "id": "22029975014_19274585550",
+            "creation_date": "2017-12-27T23:57:42+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "19274585550",
+                "fb_id": "10156073972125324",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.568645,
+                    "lon": 5.5810084,
+                    "creation_date": "2017-12-27T23:57:42+00:00",
+                    "modification_date": "2017-12-27T23:57:42+00:00"
+                },
+                "name": null,
+                "first_name": "Sophie",
+                "nickname": null,
+                "display_name": "Sophie",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.568645",
+            "lon": "5.5810084"
+        },
+        {
+            "id": "22029975014_21296037020",
+            "creation_date": "2017-12-27T15:51:40+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21296037020",
+                "fb_id": "10211279246247399",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.5686451,
+                    "lon": 5.5810082,
+                    "creation_date": "2017-12-27T15:51:40+00:00",
+                    "modification_date": "2017-12-27T15:51:40+00:00"
+                },
+                "name": null,
+                "first_name": "Julie",
+                "nickname": null,
+                "display_name": "Julie",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.5686451",
+            "lon": "5.5810082"
+        },
+        {
+            "id": "22029975014_21824178119",
+            "creation_date": "2017-12-27T14:36:01+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21824178119",
+                "fb_id": "1523576231013059",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.6238172,
+                    "lon": 5.5936134,
+                    "creation_date": "2017-12-27T14:36:01+00:00",
+                    "modification_date": "2017-12-27T14:36:01+00:00"
+                },
+                "name": null,
+                "first_name": "Joh",
+                "nickname": null,
+                "display_name": "Joh",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.6238172",
+            "lon": "5.5936134"
+        },
+        {
+            "id": "22029975014_21791769988",
+            "creation_date": "2017-12-27T14:36:01+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21791769988",
+                "fb_id": "10207236182214365",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.6238172,
+                    "lon": 5.5936134,
+                    "creation_date": "2017-12-27T14:36:01+00:00",
+                    "modification_date": "2017-12-27T14:36:01+00:00"
+                },
+                "name": null,
+                "first_name": "Marie",
+                "nickname": null,
+                "display_name": "Marie",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.6238172",
+            "lon": "5.5936134"
+        },
+        {
+            "id": "22029975014_21755979572",
+            "creation_date": "2017-12-27T14:36:01+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21755979572",
+                "fb_id": "10209135010831913",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.6238172,
+                    "lon": 5.5936134,
+                    "creation_date": "2017-12-27T14:36:01+00:00",
+                    "modification_date": "2017-12-27T14:36:01+00:00"
+                },
+                "name": null,
+                "first_name": "Ena",
+                "nickname": null,
+                "display_name": "Ena",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.6238172",
+            "lon": "5.5936134"
+        },
+        {
+            "id": "22029975014_21642517784",
+            "creation_date": "2017-12-27T14:36:01+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21642517784",
+                "fb_id": "753992594772817",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.6238172,
+                    "lon": 5.5936134,
+                    "creation_date": "2017-12-27T14:36:01+00:00",
+                    "modification_date": "2017-12-27T14:36:01+00:00"
+                },
+                "name": null,
+                "first_name": "Rendy",
+                "nickname": null,
+                "display_name": "Rendy",
+                "gender": "female",
+                "workplace": "Jules",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.6238172",
+            "lon": "5.5936134"
+        },
+        {
+            "id": "22029975014_21615532567",
+            "creation_date": "2017-12-27T14:36:01+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21615532567",
+                "fb_id": "10211841291580884",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.6238172,
+                    "lon": 5.5936134,
+                    "creation_date": "2017-12-27T14:36:01+00:00",
+                    "modification_date": "2017-12-27T14:36:01+00:00"
+                },
+                "name": null,
+                "first_name": "Elisa",
+                "nickname": null,
+                "display_name": "Elisa",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.6238172",
+            "lon": "5.5936134"
+        },
+        {
+            "id": "22029975014_21537960012",
+            "creation_date": "2017-12-27T14:36:01+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21537960012",
+                "fb_id": "10153625550917418",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.6238172,
+                    "lon": 5.5936134,
+                    "creation_date": "2017-12-27T14:36:01+00:00",
+                    "modification_date": "2017-12-27T14:36:01+00:00"
+                },
+                "name": null,
+                "first_name": "Sarah",
+                "nickname": null,
+                "display_name": "Sarah",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.6238172",
+            "lon": "5.5936134"
+        },
+        {
+            "id": "22029975014_21118548103",
+            "creation_date": "2017-12-27T14:36:01+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21118548103",
+                "fb_id": "1107711015923370",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.6238172,
+                    "lon": 5.5936134,
+                    "creation_date": "2017-12-27T14:36:01+00:00",
+                    "modification_date": "2017-12-27T14:36:01+00:00"
+                },
+                "name": null,
+                "first_name": "Justine",
+                "nickname": null,
+                "display_name": "Justine",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.6238172",
+            "lon": "5.5936134"
+        },
+        {
+            "id": "22029975014_21010128160",
+            "creation_date": "2017-12-27T14:36:01+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21010128160",
+                "fb_id": "10207272762917134",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.6238172,
+                    "lon": 5.5936134,
+                    "creation_date": "2017-12-27T14:36:01+00:00",
+                    "modification_date": "2017-12-27T14:36:01+00:00"
+                },
+                "name": null,
+                "first_name": "Laura",
+                "nickname": null,
+                "display_name": "Laura",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.6238172",
+            "lon": "5.5936134"
+        },
+        {
+            "id": "22029975014_21006615188",
+            "creation_date": "2017-12-27T14:36:01+00:00",
+            "is_pushed": true,
+            "is_notified": false,
+            "notifier": {
+                "id": "21006615188",
+                "fb_id": "10153697747797050",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "last_meet_position": {
+                    "lat": 50.6238172,
+                    "lon": 5.5936134,
+                    "creation_date": "2017-12-27T14:36:01+00:00",
+                    "modification_date": "2017-12-27T14:36:01+00:00"
+                },
+                "name": null,
+                "first_name": "Lindsay",
+                "nickname": null,
+                "display_name": "Lindsay",
+                "gender": "female",
+                "workplace": "",
+                "distance": null
+            },
+            "notified": {
+                "id": "22029975014",
+                "fb_id": "10215682107552713",
+                "twitter_id": null,
+                "role": "CLIENT",
+                "type": "client",
+                "clickable_message_link": false,
+                "name": "Vincent",
+                "first_name": "Vincent",
+                "nickname": null,
+                "display_name": "Vincent",
+                "gender": "male",
+                "workplace": "TheFaktory",
+                "distance": null
+            },
+            "actions": [],
+            "notification_type": "NEAR_YOU",
+            "lat": "50.6238172",
+            "lon": "5.5936134"
+        }
+    ],
+    "error_code": 0
+}
+#+end_example
+
+** filtered
+#+BEGIN_SRC sh :results scalar
+cat /home/vince/projects/happnless/stuff/minetes.json | jq '.data[].notifier | {name: .first_name, fb_id: .fb_id, workplace: .workplace, position: .last_meet_position}'
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+{
+  "name": "Chaimaa",
+  "fb_id": "1542826415799083",
+  "workplace": null,
+  "position": {
+    "lat": 50.5686451,
+    "lon": 5.5810082,
+    "creation_date": "2017-12-28T16:26:30+00:00",
+    "modification_date": "2017-12-28T16:26:30+00:00"
+  }
+}
+{
+  "name": "Léa",
+  "fb_id": "10208526781191961",
+  "workplace": "",
+  "position": {
+    "lat": 50.5686451,
+    "lon": 5.5810082,
+    "creation_date": "2017-12-28T16:26:30+00:00",
+    "modification_date": "2017-12-28T16:26:30+00:00"
+  }
+}
+{
+  "name": "Odissey",
+  "fb_id": "281248465605578",
+  "workplace": "",
+  "position": {
+    "lat": 50.5686451,
+    "lon": 5.5810082,
+    "creation_date": "2017-12-28T16:26:30+00:00",
+    "modification_date": "2017-12-28T16:26:30+00:00"
+  }
+}
+{
+  "name": "Cyrielle",
+  "fb_id": "10210199405045731",
+  "workplace": "Silva Hotel Spa-Balmoral",
+  "position": {
+    "lat": 50.5686451,
+    "lon": 5.5810082,
+    "creation_date": "2017-12-28T16:26:30+00:00",
+    "modification_date": "2017-12-28T16:26:30+00:00"
+  }
+}
+{
+  "name": "Sylvia",
+  "fb_id": "1760406250877480",
+  "workplace": "",
+  "position": {
+    "lat": 50.5939,
+    "lon": 5.561365,
+    "creation_date": "2017-12-28T10:22:13+00:00",
+    "modification_date": "2017-12-28T10:22:13+00:00"
+  }
+}
+{
+  "name": "Florine",
+  "fb_id": "10209491766512542",
+  "workplace": "CHU de Liège",
+  "position": {
+    "lat": 50.5939006,
+    "lon": 5.561365,
+    "creation_date": "2017-12-28T09:20:53+00:00",
+    "modification_date": "2017-12-28T09:20:53+00:00"
+  }
+}
+{
+  "name": "Priscilla",
+  "fb_id": "443757229167831",
+  "workplace": "",
+  "position": {
+    "lat": 50.5939006,
+    "lon": 5.561365,
+    "creation_date": "2017-12-28T09:20:53+00:00",
+    "modification_date": "2017-12-28T09:20:53+00:00"
+  }
+}
+{
+  "name": "Amandine",
+  "fb_id": "10208753617413678",
+  "workplace": "",
+  "position": {
+    "lat": 50.568645,
+    "lon": 5.5810084,
+    "creation_date": "2017-12-28T06:14:09+00:00",
+    "modification_date": "2017-12-28T06:14:09+00:00"
+  }
+}
+{
+  "name": "Sophie",
+  "fb_id": "10209883443181895",
+  "workplace": "",
+  "position": {
+    "lat": 50.568645,
+    "lon": 5.5810084,
+    "creation_date": "2017-12-28T03:22:20+00:00",
+    "modification_date": "2017-12-28T03:22:20+00:00"
+  }
+}
+{
+  "name": "Sophie",
+  "fb_id": "10156073972125324",
+  "workplace": "",
+  "position": {
+    "lat": 50.568645,
+    "lon": 5.5810084,
+    "creation_date": "2017-12-27T23:57:42+00:00",
+    "modification_date": "2017-12-27T23:57:42+00:00"
+  }
+}
+{
+  "name": "Julie",
+  "fb_id": "10211279246247399",
+  "workplace": "",
+  "position": {
+    "lat": 50.5686451,
+    "lon": 5.5810082,
+    "creation_date": "2017-12-27T15:51:40+00:00",
+    "modification_date": "2017-12-27T15:51:40+00:00"
+  }
+}
+{
+  "name": "Joh",
+  "fb_id": "1523576231013059",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Marie",
+  "fb_id": "10207236182214365",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Ena",
+  "fb_id": "10209135010831913",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Rendy",
+  "fb_id": "753992594772817",
+  "workplace": "Jules",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Elisa",
+  "fb_id": "10211841291580884",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Sarah",
+  "fb_id": "10153625550917418",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Justine",
+  "fb_id": "1107711015923370",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Laura",
+  "fb_id": "10207272762917134",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Lindsay",
+  "fb_id": "10153697747797050",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+#+end_example
+
+** facebook id
+#+RESULTS:
+#+begin_example
+{
+  "name": "Chaimaa",
+  "fb_id": "1542826415799083",
+  "workplace": null,
+  "position": {
+    "lat": 50.5686451,
+    "lon": 5.5810082,
+    "creation_date": "2017-12-28T16:26:30+00:00",
+    "modification_date": "2017-12-28T16:26:30+00:00"
+  }
+}
+{
+  "name": "Léa",
+  "fb_id": "10208526781191961",
+  "workplace": "",
+  "position": {
+    "lat": 50.5686451,
+    "lon": 5.5810082,
+    "creation_date": "2017-12-28T16:26:30+00:00",
+    "modification_date": "2017-12-28T16:26:30+00:00"
+  }
+}
+{
+  "name": "Odissey",
+  "fb_id": "281248465605578",
+  "workplace": "",
+  "position": {
+    "lat": 50.5686451,
+    "lon": 5.5810082,
+    "creation_date": "2017-12-28T16:26:30+00:00",
+    "modification_date": "2017-12-28T16:26:30+00:00"
+  }
+}
+{
+  "name": "Cyrielle",
+  "fb_id": "10210199405045731",
+  "workplace": "Silva Hotel Spa-Balmoral",
+  "position": {
+    "lat": 50.5686451,
+    "lon": 5.5810082,
+    "creation_date": "2017-12-28T16:26:30+00:00",
+    "modification_date": "2017-12-28T16:26:30+00:00"
+  }
+}
+{
+  "name": "Sylvia",
+  "fb_id": "1760406250877480",
+  "workplace": "",
+  "position": {
+    "lat": 50.5939,
+    "lon": 5.561365,
+    "creation_date": "2017-12-28T10:22:13+00:00",
+    "modification_date": "2017-12-28T10:22:13+00:00"
+  }
+}
+{
+  "name": "Florine",
+  "fb_id": "10209491766512542",
+  "workplace": "CHU de Liège",
+  "position": {
+    "lat": 50.5939006,
+    "lon": 5.561365,
+    "creation_date": "2017-12-28T09:20:53+00:00",
+    "modification_date": "2017-12-28T09:20:53+00:00"
+  }
+}
+{
+  "name": "Priscilla",
+  "fb_id": "443757229167831",
+  "workplace": "",
+  "position": {
+    "lat": 50.5939006,
+    "lon": 5.561365,
+    "creation_date": "2017-12-28T09:20:53+00:00",
+    "modification_date": "2017-12-28T09:20:53+00:00"
+  }
+}
+{
+  "name": "Amandine",
+  "fb_id": "10208753617413678",
+  "workplace": "",
+  "position": {
+    "lat": 50.568645,
+    "lon": 5.5810084,
+    "creation_date": "2017-12-28T06:14:09+00:00",
+    "modification_date": "2017-12-28T06:14:09+00:00"
+  }
+}
+{
+  "name": "Sophie",
+  "fb_id": "10209883443181895",
+  "workplace": "",
+  "position": {
+    "lat": 50.568645,
+    "lon": 5.5810084,
+    "creation_date": "2017-12-28T03:22:20+00:00",
+    "modification_date": "2017-12-28T03:22:20+00:00"
+  }
+}
+{
+  "name": "Sophie",
+  "fb_id": "10156073972125324",
+  "workplace": "",
+  "position": {
+    "lat": 50.568645,
+    "lon": 5.5810084,
+    "creation_date": "2017-12-27T23:57:42+00:00",
+    "modification_date": "2017-12-27T23:57:42+00:00"
+  }
+}
+{
+  "name": "Julie",
+  "fb_id": "10211279246247399",
+  "workplace": "",
+  "position": {
+    "lat": 50.5686451,
+    "lon": 5.5810082,
+    "creation_date": "2017-12-27T15:51:40+00:00",
+    "modification_date": "2017-12-27T15:51:40+00:00"
+  }
+}
+{
+  "name": "Joh",
+  "fb_id": "1523576231013059",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Marie",
+  "fb_id": "10207236182214365",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Ena",
+  "fb_id": "10209135010831913",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Rendy",
+  "fb_id": "753992594772817",
+  "workplace": "Jules",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Elisa",
+  "fb_id": "10211841291580884",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Sarah",
+  "fb_id": "10153625550917418",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Justine",
+  "fb_id": "1107711015923370",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Laura",
+  "fb_id": "10207272762917134",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+{
+  "name": "Lindsay",
+  "fb_id": "10153697747797050",
+  "workplace": "",
+  "position": {
+    "lat": 50.6238172,
+    "lon": 5.5936134,
+    "creation_date": "2017-12-27T14:36:01+00:00",
+    "modification_date": "2017-12-27T14:36:01+00:00"
+  }
+}
+#+end_example
+
+#+BEGIN_SRC sh scalar
+cat /home/vince/projects/happnless/stuff/minetes.json | jq '.data[].notifier |  "https://www.facebook.com/\(.fb_id), \(.first_name)"'
+#+END_SRC
+
+#+RESULTS:
+| https://www.facebook.com/1542826415799083, Chaimaa   |
+| https://www.facebook.com/10208526781191961, Léa      |
+| https://www.facebook.com/281248465605578, Odissey    |
+| https://www.facebook.com/10210199405045731, Cyrielle |
+| https://www.facebook.com/1760406250877480, Sylvia    |
+| https://www.facebook.com/10209491766512542, Florine  |
+| https://www.facebook.com/443757229167831, Priscilla  |
+| https://www.facebook.com/10208753617413678, Amandine |
+| https://www.facebook.com/10209883443181895, Sophie   |
+| https://www.facebook.com/10156073972125324, Sophie   |
+| https://www.facebook.com/10211279246247399, Julie    |
+| https://www.facebook.com/1523576231013059, Joh       |
+| https://www.facebook.com/10207236182214365, Marie    |
+| https://www.facebook.com/10209135010831913, Ena      |
+| https://www.facebook.com/753992594772817, Rendy      |
+| https://www.facebook.com/10211841291580884, Elisa    |
+| https://www.facebook.com/10153625550917418, Sarah    |
+| https://www.facebook.com/1107711015923370, Justine   |
+| https://www.facebook.com/10207272762917134, Laura    |
+| https://www.facebook.com/10153697747797050, Lindsay  |
