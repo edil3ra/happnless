@@ -1,50 +1,98 @@
 import requests
-import uuid
-# from urlparse import urlparse, parse_qs
-import urllib
+import logging
+import robobrowser
+import re
+import os.path
+import yaml
 
-def login():
-    random_uuid = str(uuid.uuid4())
-    authorization_base_url = 'https://www.facebook.com/dialog/oauth'
-    token_url = 'https://graph.facebook.com/oauth/access_token'
-    redirect_uri = 'https://%s.happn.com/' % random_uuid
+conf_path = os.path.join(os.path.dirname(__file__), '..', 'conf', 'config.yaml')
+token_path = os.path.join(os.path.dirname(__file__), '..', 'conf', 'token.txt')
+conf = yaml.load(open(conf_path))
 
-    url = 'https://www.facebook.com/dialog/oauth?'
-    params = {
-        'client_id': '247294518656661',
-        'redirect_uri': redirect_uri,
-        'scope': 'user_birthday,email,user_likes,user_about_me,user_photos,user_work_history,user_friends',
-        'response_type': 'token'
-    }
-    query = '{}{}'.format(url, urllib.parse.urlencode(params))
+
+headers = {
+    'User-Agent':'Happn/19.1.0 AndroidSDK/19',
+    'platform': 'android',
+    'Host':'api.happn.fr',
+    'connection' : 'Keep-Alive',
+    'Accept-Encoding':'gzip'
+}
+
+
+
+def get_fbtoken(email, password):
+    rb = robobrowser.RoboBrowser(user_agent=conf['mobile_user_agent'], parser="html5lib")
+    rb.open(conf['fb_api_key_url'])
+    login_form = rb.get_form()
+    login_form["pass"] = password
+    login_form["email"] = email
+    rb.submit_form(login_form)
     
-    print "Please copy this into your browser:\n %s?%s" % ( authorization_base_url, urllib.urlencode(params) )
-    
-    # Get the authorization verifier code from the callback url
-    redirect_response = raw_input('Paste the full redirect URL here:')
-    
-    # Parse the redirect response for the access_token
-    o = urlparse(redirect_response)
+    token_url = rb.response.history[-2].url
+    fb_token = token_url.split('=')[1].split('&')[0]
 
-    access_token = parse_qs(o.fragment)['access_token'][0]
+    return fb_token
 
-    data = {
-        'client_id': 'FUE-idSEP-f7AqCyuMcPr2K-1iCIU_YlvK-M-im3c',
-        'client_secret': 'brGoHSwZsPjJ-lBk0HqEXVtb3UFu-y5l_JcOjD-Ekv',
+
+def get_happn_token(fb_token):
+    h=headers
+    h.update({
+        'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8',
+        'Content-Length': '374'
+        })
+
+    payload = {
+        'client_id': conf['client_id'],
+        'client_secret': conf['client_secret'],
         'grant_type': 'assertion',
-        'assertion_type': 'facebook_access_token',
-        'assertion': access_token,
+        'assertion_type':'facebook_access_token',
+        'assertion': fb_token,
         'scope': 'mobile_app'
     }
+    url = 'https://api.happn.fr/connect/oauth/token'
+    try:
+        r = requests.post(url, headers=h, data=payload)
+    except Exception as e:
+        raise Exception('Error Connecting to Happn Server: {}'.format(e))
 
-    url = 'https://connect.happn.fr/connect/oauth/token'
+    # Check response validity
+    if r.status_code == 200:
+        logging.debug('Fetched Happn OAuth token:, %s', r.json()['access_token'])
+        return r.json()['access_token'], r.json()['user_id']
+    else:
+        # Error code returned from server (but server was accessible)
+        logging.warning('Server denied request for OAuth token. Status: %d', r.status_code)
+        raise Exception(r.status_code)
 
-    r = requests.post(url, headers=preAuthHeaders, data=data, verify=False)
-    user_info = r.json()
+
+def login(email=None, password=None, fb_token=None):
+    '''
+    Args:
+        email (str): facebook email
+        password (str): facebook password
+        fb_token (str): fb_token
+    Returns:
+        (str, str): acces_token, user_id
+    '''
+
+    if fb_token is None:
+        if email is None or password is None:
+            raise Exception('missing facebook email and password email')
+        fb_token = get_fbtoken(email, password)
+        
+    if fb_token is None:
+        raise Exception('missing fb_token ')
+
+    return get_happn_token(fb_token)
+
+
+def write_token(token):
+    open(token_path, 'w').write(token)
     
-    myID = user_info['user_id']
-    OAuth = user_info['access_token']
+
+def read_token():
+    if not os.path.exists(token_path):
+        raise Exception('token does not exist yet')
+    return open(token_path, 'r').read()
     
-    file = open("key", "w")
-    file.write(OAuth)
-    file.close()
+    

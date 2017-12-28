@@ -1,0 +1,7 @@
+client_id: 'FUE-idSEP-f7AqCyuMcPr2K-1iCIU_YlvK-M-im3c'
+client_secret: 'brGoHSwZsPjJ-lBk0HqEXVtb3UFu-y5l_JcOjD-Ekv'
+
+mobile_user_agent: "Mozilla/5.0 (Linux; U; en-gb; KFTHWI Build/JDQ39) AppleWebKit/535.19 (KHTML, like Gecko) Silk/3.16 Safari/535.19"
+fb_api_key_url: "https://www.facebook.com/dialog/oauth?client_id=247294518656661&redirect_uri=https://www.happn.fr&scope=basic_info&response_type=token"
+
+api_endpoint: 'https://api.happn.fr/api'
