@@ -4,10 +4,10 @@
 * request
 ** options
 #+BEGIN_SRC sh :results pp
-http options https://api.happn.fr/api
+http options https://api.happn.fr/api authorization:OAuth=\"eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAACXLQQuCMBjG8e_ynh1sr5tz3kIMQgQhPESEzE1hobhSo4i-e4suz-HH83_DYmbfQ3aGae7c2Lfae7hEcF0dZIBKoKJoCUprCFeGkbSzOszAO50Iy1FBBMvW_c5IUSkpKOPB9GaD7ZuCOHssajLI3S1_bZWp71gS5vJD057GR0kq4qbYhKJ_esiYYFykMUMagdPrH7hKJNLPF1fPTf-tAAAA.TuMSWvu826Z9d94h2Ej_bVHWwb2YFbdWZPlEfAKi_IM\"
 #+END_SRC
 #+RESULTS:
-: {"success":true,"status":200,"error":null,"data":{"sso":{"facebook":{"enable":true},"vk":{"enable":false}},"report_types":[{"id":"10404","name":"Bad behavior","description":"Bad behavior","level":1},{"id":"10403","name":"Fake profile","description":"Fake profile","level":1},{"id":"10408","name":"Commercial profile","description":"Commercial profile","level":3},{"id":"10406","name":"Inapropriate picture","description":"Inappropriate picture","level":4},{"id":"10405","name":"Scam","description":"Scam","level":4},{"id":"10407","name":"Underage","description":"Underage","level":5}],"achievement_types":[{"id":"533","status":1,"name":"FACEBOOK_CONNECT","creation_date":"2013-11-12","credits":0,"max_times":1},{"id":"534","status":1,"name":"FACEBOOK_LIKE","creation_date":"2013-11-12","credits":0,"max_times":1},{"id":"535","status":1,"name":"UPDATE_PICTURE","creation_date":"2013-11-12","credits":0,"max_times":5},{"id":"536","status":1,"name":"RATE_APP","creation_date":"2013-11-12","credits":0,"max_times":1},{"id":"537","status":1,"name":"INVITE","creation_date":"2013-11-12","credits":5,"max_times":1000},{"id":"538","status":1,"name":"NEW_ACCOUNT","creation_date":"2013-11-12","credits":10,"max_times":1},{"id":"791","status":1,"name":"SOCIAL_LIKE","creation_date":"2016-03-31","credits":0,"max_times":1},{"id":"792","status":1,"name":"START_TUTORIAL","creation_date":"2016-08-02","credits":0,"max_times":1},{"id":"793","status":1,"name":"TUTORIAL_LIKE_PROFILE","creation_date":"2016-08-02","credits":0,"max_times":2},{"id":"794","status":1,"name":"TUTORIAL_STEP_2","creation_date":"2016-08-02","credits":0,"max_times":1},{"id":"795","status":1,"name":"TUTORIAL_CHARM_PROFILE","creation_date":"2016-08-02","credits":1,"max_times":1},{"id":"796","status":1,"name":"END_TUTORIAL","creation_date":"2016-08-02","credits":0,"max_times":1},{"id":"797","status":1,"name":"NESCAFE_START","creation_date":"2016-08-29","credits":0,"max_times":1},{"id":"798","status":1,"name":"NESCAFE_END","creation_date":"2016-08-29","credits":0,"max_times":1},{"id":"799","status":1,"name":"COCA_COLA","creation_date":"2017-04-19","credits":0,"max_times":1}],"availability_types":[{"type":"DINNER","picto":{"id":"picto_DINNER","url":"https:\/\/static.happn.com\/availability-types\/icon-food-90.png","width":90,"height":90},"label":"Grab a bite","color":"#ff6e70","emoji":"\ud83c\udf54","duration":21600},{"type":"RUN","picto":{"id":"picto_RUN","url":"https:\/\/static.happn.com\/availability-types\/icon-sport-90.png","width":90,"height":90},"label":"RUN_label","color":"#fcd04c","emoji":"","duration":21600},{"type":"DRINK","picto":{"id":"picto_DRINK","url":"https:\/\/static.happn.com\/availability-types\/icon-drink-90.png","width":90,"height":90},"label":"DRINK_label","color":"#9591ed","emoji":"","duration":21600},{"type":"CINEMA","picto":{"id":"picto_CINEMA","url":"https:\/\/static.happn.com\/availability-types\/icon-movie-90.png","width":90,"height":90},"label":"CINEMA_label","color":"#4ebedb","emoji":"","duration":21600},{"type":"PARTY","picto":{"id":"picto_PARTY","url":"https:\/\/static.happn.com\/availability-types\/icon-party-90.png","width":90,"height":90},"label":"PARTY_label","color":"#06d6a0","emoji":"","duration":21600},{"type":"WALK","picto":{"id":"picto_WALK","url":"https:\/\/static.happn.com\/availability-types\/icon-walk-90.png","width":90,"height":90},"label":"WALK_label","color":"#ffa665","emoji":"\ud83d\udc2a\ud83d\udc2a","duration":21600}],"ads_inventory":null,"shop_template":1,"last_tos_version":"9cc435b0-8e28-11e7-9e90-bd58f0bd14d7","shop":[],"say_hi":{"send_message_enable":false},"crush_time":null,"charms_sent":{"enable":true},"timeline":{"rule_version":2,"version":2}},"error_code":0}
+: {"success":true,"status":200,"error":null,"data":{"sso":{"facebook":{"enable":true},"vk":{"enable":false}},"report_types":[{"id":"10404","name":"Bad behavior","description":"Bad behavior","level":1},{"id":"10403","name":"Fake profile","description":"Fake profile","level":1},{"id":"10408","name":"Commercial profile","description":"Commercial profile","level":3},{"id":"10406","name":"Inapropriate picture","description":"Inappropriate picture","level":4},{"id":"10405","name":"Scam","description":"Scam","level":4},{"id":"10407","name":"Underage","description":"Underage","level":5}],"achievement_types":[{"id":"533","status":1,"name":"FACEBOOK_CONNECT","creation_date":"2013-11-12","credits":0,"max_times":1},{"id":"534","status":1,"name":"FACEBOOK_LIKE","creation_date":"2013-11-12","credits":0,"max_times":1},{"id":"535","status":1,"name":"UPDATE_PICTURE","creation_date":"2013-11-12","credits":0,"max_times":5},{"id":"536","status":1,"name":"RATE_APP","creation_date":"2013-11-12","credits":0,"max_times":1},{"id":"537","status":1,"name":"INVITE","creation_date":"2013-11-12","credits":5,"max_times":1000},{"id":"538","status":1,"name":"NEW_ACCOUNT","creation_date":"2013-11-12","credits":10,"max_times":1},{"id":"791","status":1,"name":"SOCIAL_LIKE","creation_date":"2016-03-31","credits":0,"max_times":1},{"id":"792","status":1,"name":"START_TUTORIAL","creation_date":"2016-08-02","credits":0,"max_times":1},{"id":"793","status":1,"name":"TUTORIAL_LIKE_PROFILE","creation_date":"2016-08-02","credits":0,"max_times":2},{"id":"794","status":1,"name":"TUTORIAL_STEP_2","creation_date":"2016-08-02","credits":0,"max_times":1},{"id":"795","status":1,"name":"TUTORIAL_CHARM_PROFILE","creation_date":"2016-08-02","credits":1,"max_times":1},{"id":"796","status":1,"name":"END_TUTORIAL","creation_date":"2016-08-02","credits":0,"max_times":1},{"id":"797","status":1,"name":"NESCAFE_START","creation_date":"2016-08-29","credits":0,"max_times":1},{"id":"798","status":1,"name":"NESCAFE_END","creation_date":"2016-08-29","credits":0,"max_times":1},{"id":"799","status":1,"name":"COCA_COLA","creation_date":"2017-04-19","credits":0,"max_times":1}],"availability_types":[{"type":"DINNER","picto":{"id":"picto_DINNER","url":"https:\/\/static.happn.com\/availability-types\/icon-food-90.png","width":90,"height":90},"label":"Grab a bite","color":"#ff6e70","emoji":"\ud83c\udf54","duration":21600},{"type":"RUN","picto":{"id":"picto_RUN","url":"https:\/\/static.happn.com\/availability-types\/icon-sport-90.png","width":90,"height":90},"label":"RUN_label","color":"#fcd04c","emoji":"","duration":21600},{"type":"DRINK","picto":{"id":"picto_DRINK","url":"https:\/\/static.happn.com\/availability-types\/icon-drink-90.png","width":90,"height":90},"label":"DRINK_label","color":"#9591ed","emoji":"","duration":21600},{"type":"CINEMA","picto":{"id":"picto_CINEMA","url":"https:\/\/static.happn.com\/availability-types\/icon-movie-90.png","width":90,"height":90},"label":"CINEMA_label","color":"#4ebedb","emoji":"","duration":21600},{"type":"PARTY","picto":{"id":"picto_PARTY","url":"https:\/\/static.happn.com\/availability-types\/icon-party-90.png","width":90,"height":90},"label":"PARTY_label","color":"#06d6a0","emoji":"","duration":21600},{"type":"WALK","picto":{"id":"picto_WALK","url":"https:\/\/static.happn.com\/availability-types\/icon-walk-90.png","width":90,"height":90},"label":"WALK_label","color":"#ffa665","emoji":"\ud83d\udc2a\ud83d\udc2a","duration":21600}],"ads_inventory":null,"shop_template":1,"last_tos_version":"9cc435b0-8e28-11e7-9e90-bd58f0bd14d7","shop":[{"id":"d2933560-b459-11e5-8d4a-b9f5925dc5ce","name":"pack 10 - Android","description":"android pack 10","modification_date":"2015-03-05T00:00:00","creation_date":"2014-03-26T00:00:00","activated":true,"store_product_id":"com.ftw_and_co.happn.c.10_coins","default_product":true,"position":0,"channel":"playstore","product_type":"PACK","pack_information":{"credits":10}},{"id":"d293d1a0-b459-11e5-8d4a-b9f5925dc5ce","name":"Pack 60 - Android","description":"Pack 60 - Android","modification_date":"2014-03-26T00:00:00","creation_date":"2014-03-26T00:00:00","activated":true,"store_product_id":"com.ftw_and_co.happn.c.60_coins","default_product":true,"position":2,"channel":"playstore","product_type":"PACK","pack_information":{"credits":60}},{"id":"d2946de0-b459-11e5-8d4a-b9f5925dc5ce","name":"Pack 100 - Android","description":"Pack 100 - Android","modification_date":"2014-03-26T00:00:00","creation_date":"2014-03-26T00:00:00","activated":true,"store_product_id":"com.ftw_and_co.happn.c.100_coins","default_product":true,"position":3,"channel":"playstore","product_type":"PACK","pack_information":{"credits":100}},{"id":"d29642a0-b459-11e5-8d4a-b9f5925dc5ce","name":"Pack 250 - Android","description":"Pack 250 - Android","modification_date":"2015-03-09T00:00:00","creation_date":"2015-03-05T00:00:00","activated":true,"store_product_id":"com.ftw_and_co.happn.c.250_coins","default_product":true,"position":4,"channel":"playstore","product_type":"PACK","pack_information":{"credits":250}},{"id":"d2977b20-b459-11e5-8d4a-b9f5925dc5ce","name":"pack 10 - Windows","description":"pack 10 - Windows","modification_date":"2015-04-14T00:00:00","creation_date":"2015-04-14T00:00:00","activated":true,"store_product_id":"com.ftw_and_co.happn.c.10_coins","default_product":true,"position":0,"channel":"windows","product_type":"PACK","pack_information":{"credits":10}},{"id":"d2981760-b459-11e5-8d4a-b9f5925dc5ce","name":"Pack 60 - Windows","description":"Pack 60 - Windows","modification_date":"2015-04-14T00:00:00","creation_date":"2015-04-14T00:00:00","activated":true,"store_product_id":"com.ftw_and_co.happn.c.60_coins","default_product":true,"position":2,"channel":"windows","product_type":"PACK","pack_information":{"credits":60}},{"id":"d298b3a0-b459-11e5-8d4a-b9f5925dc5ce","name":"Pack 100 - Windows","description":"Pack 100 - Windows","modification_date":"2015-04-14T00:00:00","creation_date":"2015-04-14T00:00:00","activated":true,"store_product_id":"com.ftw_and_co.happn.c.100_coins","default_product":true,"position":3,"channel":"windows","product_type":"PACK","pack_information":{"credits":100}},{"id":"d2994fe0-b459-11e5-8d4a-b9f5925dc5ce","name":"Pack 250 - Windows","description":"Pack 250 - Windows","modification_date":"2015-04-14T00:00:00","creation_date":"2015-04-14T00:00:00","activated":true,"store_product_id":"com.ftw_and_co.happn.c.250_coins","default_product":true,"position":4,"channel":"windows","product_type":"PACK","pack_information":{"credits":250}},{"id":"43bfa610-9aaa-11e6-83c6-81ce17ca3daf","name":"PACK 10 - Itunes (tier3)","description":"PACK 10 - Itunes (tier3)","modification_date":"2017-02-16T15:41:57","creation_date":"2016-10-25T11:57:55","activated":true,"store_product_id":"fr.ftw_and_co.happn.c.10_coins_t3","default_product":true,"position":0,"channel":"itunes","product_type":"PACK","pack_information":{"credits":10}},{"id":"2b266d90-fcf3-11e6-9d36-f575796ecf3d","name":"PACK 60 - Itunes (tier15)","description":"PACK 60 - Itunes (tier15)","modification_date":"2017-02-27T13:46:41","creation_date":"2017-02-27T13:46:41","activated":true,"store_product_id":"fr.ftw_and_co.happn.c.60_coins_t15","default_product":true,"position":1,"channel":"itunes","product_type":"PACK","pack_information":{"credits":60}},{"id":"5329f550-fcf3-11e6-9d36-f575796ecf3d","name":"PACK 100 - Itunes (tier23)","description":"PACK 100 - Itunes (tier23)","modification_date":"2017-02-27T13:50:09","creation_date":"2017-02-27T13:47:48","activated":true,"store_product_id":"fr.ftw_and_co.happn.c.100_coins_t23","default_product":true,"position":2,"channel":"itunes","product_type":"PACK","pack_information":{"credits":100}},{"id":"a82a8470-fcf3-11e6-a51d-5bdac3ecdbb8","name":"PACK 250 - Itunes (tier40)","description":"PACK 250 - Itunes (tier40)","modification_date":"2017-02-27T13:51:35","creation_date":"2017-02-27T13:50:10","activated":true,"store_product_id":"fr.ftw_and_co.happn.c.250_coins_t40","default_product":true,"position":3,"channel":"itunes","product_type":"PACK","pack_information":{"credits":250}},{"id":"335b12e3-f780-11e6-821b-d3402460ae9f","name":"playstore_plan_5_per_day_1_month_p2","description":"plan playstore 5 credits per day for 1 month p2","creation_date":"2017-03-27T12:59:46","activated":true,"store_product_id":"com.ftw_and_co.happn.ars.5_per_day_1_month_p2","default_product":false,"position":2,"channel":"playstore","product_type":"PLAN","plan_information":{"renewable_credits_per_period":5,"cooldown_credits_period":43200,"recurrence_subscription_period":{"unit":"MONTH","value":1}}},{"id":"335b12e4-f780-11e6-821b-d3402460ae9f","name":"playstore_plan_5_per_day_3_months_p2","description":"plan playstore 5 credits per day for 3 months p2","creation_date":"2017-03-27T12:59:46","activated":true,"store_product_id":"com.ftw_and_co.happn.ars.5_per_day_3_months_p2","default_product":false,"position":1,"channel":"playstore","product_type":"PLAN","plan_information":{"renewable_credits_per_period":5,"cooldown_credits_period":43200,"recurrence_subscription_period":{"unit":"MONTH","value":3}}},{"id":"335b12e5-f780-11e6-821b-d3402460ae9f","name":"playstore_plan_5_per_day_6_months_p2","description":"plan playstore 5 credits per day for 6 months p2","creation_date":"2017-03-27T12:59:46","activated":true,"store_product_id":"com.ftw_and_co.happn.ars.5_per_day_6_months_p2","default_product":false,"position":0,"channel":"playstore","product_type":"PLAN","plan_information":{"renewable_credits_per_period":5,"cooldown_credits_period":43200,"recurrence_subscription_period":{"unit":"MONTH","value":6}}},{"id":"1a7469c3-f839-11e6-8cea-5b08c154b482","name":"itunes_plan_5_per_day_1_month_p2","description":"plan itunes 5 credits per day for 1 month p2","modification_date":"2017-04-27T14:24:02","creation_date":"2017-03-27T12:59:46","activated":true,"store_product_id":"fr.ftw_and_co.happn.ars.p2.5_credits_per_day_1_month","default_product":false,"position":2,"channel":"itunes","product_type":"PLAN","plan_information":{"renewable_credits_per_period":5,"cooldown_credits_period":43200,"recurrence_subscription_period":{"unit":"MONTH","value":1}}},{"id":"1a7469c4-f839-11e6-8cea-5b08c154b482","name":"itunes_plan_5_per_day_3_months_p2","description":"plan itunes 5 credits per day for 3 months p2","modification_date":"2017-05-09T09:25:51","creation_date":"2017-03-27T12:59:46","activated":true,"store_product_id":"fr.ftw_and_co.happn.ars.p2.5_credits_per_day_3_months","default_product":false,"position":1,"channel":"itunes","product_type":"PLAN","plan_information":{"renewable_credits_per_period":5,"cooldown_credits_period":43200,"recurrence_subscription_period":{"unit":"MONTH","value":3}}},{"id":"1a7469c5-f839-11e6-8cea-5b08c154b482","name":"itunes_plan_5_per_day_6_months_p2","description":"plan itunes 5 credits per day for 6 months p2","modification_date":"2017-05-09T09:26:06","creation_date":"2017-03-27T12:59:46","activated":true,"store_product_id":"fr.ftw_and_co.happn.ars.p2.5_credits_per_day_6_months","default_product":false,"position":0,"channel":"itunes","product_type":"PLAN","plan_information":{"renewable_credits_per_period":5,"cooldown_credits_period":43200,"recurrence_subscription_period":{"unit":"MONTH","value":6}}}],"say_hi":{"send_message_enable":false},"crush_time":{"session":null,"entry_point":"notification"},"charms_sent":{"enable":true},"timeline":{"rule_version":2,"version":2}},"error_code":0}
 
 ** my profile
 #+BEGIN_SRC sh :results scalar
@@ -27,8 +27,24 @@ http get https://api.happn.fr/api/users/22029975014/notifications authorization:
 
 ** notifications
 #+BEGIN_SRC sh :results scalar
-http get https://api.happn.fr/api/users/22029975014/notifications authorization:OAuth=\"eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAACXLQQuCMBjG8e_ynh1sr5tz3kIMQgQhPESEzE1hobhSo4i-e4suz-HH83_DYmbfQ3aGae7c2Lfae7hEcF0dZIBKoKJoCUprCFeGkbSzOszAO50Iy1FBBMvW_c5IUSkpKOPB9GaD7ZuCOHssajLI3S1_bZWp71gS5vJD057GR0kq4qbYhKJ_esiYYFykMUMagdPrH7hKJNLPF1fPTf-tAAAA.TuMSWvu826Z9d94h2Ej_bVHWwb2YFbdWZPlEfAKi_IM\" types==468 
+http get https://api.happn.fr/api/users/22029975014/notifications authorization:OAuth=\"eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAACXLQQuCMBjG8e_ynh1sr5tz3kIMQgQhPESEzE1hobhSo4i-e4suz-HH83_DYmbfQ3aGae7c2Lfae7hEcF0dZIBKoKJoCUprCFeGkbSzOszAO50Iy1FBBMvW_c5IUSkpKOPB9GaD7ZuCOHssajLI3S1_bZWp71gS5vJD057GR0kq4qbYhKJ_esiYYFykMUMagdPrH7hKJNLPF1fPTf-tAAAA.TuMSWvu826Z9d94h2Ej_bVHWwb2YFbdWZPlEfAKi_IM\" types==468 | jq .
 #+END_SRC
+
+#+RESULTS:
+: {
+:   "success": true,
+:   "status": 200,
+:   "error": null,
+:   "data": [],
+:   "error_code": 0
+: }
+
+** notifications update file
+   #+BEGIN_SRC sh :results scalar
+http get https://api.happn.fr/api/users/22029975014/notifications authorization:OAuth=\"eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAACXLQQuCMBjG8e_ynh1sr5tz3kIMQgQhPESEzE1hobhSo4i-e4suz-HH83_DYmbfQ3aGae7c2Lfae7hEcF0dZIBKoKJoCUprCFeGkbSzOszAO50Iy1FBBMvW_c5IUSkpKOPB9GaD7ZuCOHssajLI3S1_bZWp71gS5vJD057GR0kq4qbYhKJ_esiYYFykMUMagdPrH7hKJNLPF1fPTf-tAAAA.TuMSWvu826Z9d94h2Ej_bVHWwb2YFbdWZPlEfAKi_IM\" types==468 | jq . > minetes.json
+   #+END_SRC
+
+   #+RESULTS:
 
 * notifications parse
 ** raw
@@ -1197,252 +1213,120 @@ cat /home/vince/projects/happnless/stuff/minetes.json | jq '.data[].notifier | {
 #+end_example
 
 ** facebook id
-#+RESULTS:
-#+begin_example
-{
-  "name": "Chaimaa",
-  "fb_id": "1542826415799083",
-  "workplace": null,
-  "position": {
-    "lat": 50.5686451,
-    "lon": 5.5810082,
-    "creation_date": "2017-12-28T16:26:30+00:00",
-    "modification_date": "2017-12-28T16:26:30+00:00"
-  }
-}
-{
-  "name": "Léa",
-  "fb_id": "10208526781191961",
-  "workplace": "",
-  "position": {
-    "lat": 50.5686451,
-    "lon": 5.5810082,
-    "creation_date": "2017-12-28T16:26:30+00:00",
-    "modification_date": "2017-12-28T16:26:30+00:00"
-  }
-}
-{
-  "name": "Odissey",
-  "fb_id": "281248465605578",
-  "workplace": "",
-  "position": {
-    "lat": 50.5686451,
-    "lon": 5.5810082,
-    "creation_date": "2017-12-28T16:26:30+00:00",
-    "modification_date": "2017-12-28T16:26:30+00:00"
-  }
-}
-{
-  "name": "Cyrielle",
-  "fb_id": "10210199405045731",
-  "workplace": "Silva Hotel Spa-Balmoral",
-  "position": {
-    "lat": 50.5686451,
-    "lon": 5.5810082,
-    "creation_date": "2017-12-28T16:26:30+00:00",
-    "modification_date": "2017-12-28T16:26:30+00:00"
-  }
-}
-{
-  "name": "Sylvia",
-  "fb_id": "1760406250877480",
-  "workplace": "",
-  "position": {
-    "lat": 50.5939,
-    "lon": 5.561365,
-    "creation_date": "2017-12-28T10:22:13+00:00",
-    "modification_date": "2017-12-28T10:22:13+00:00"
-  }
-}
-{
-  "name": "Florine",
-  "fb_id": "10209491766512542",
-  "workplace": "CHU de Liège",
-  "position": {
-    "lat": 50.5939006,
-    "lon": 5.561365,
-    "creation_date": "2017-12-28T09:20:53+00:00",
-    "modification_date": "2017-12-28T09:20:53+00:00"
-  }
-}
-{
-  "name": "Priscilla",
-  "fb_id": "443757229167831",
-  "workplace": "",
-  "position": {
-    "lat": 50.5939006,
-    "lon": 5.561365,
-    "creation_date": "2017-12-28T09:20:53+00:00",
-    "modification_date": "2017-12-28T09:20:53+00:00"
-  }
-}
-{
-  "name": "Amandine",
-  "fb_id": "10208753617413678",
-  "workplace": "",
-  "position": {
-    "lat": 50.568645,
-    "lon": 5.5810084,
-    "creation_date": "2017-12-28T06:14:09+00:00",
-    "modification_date": "2017-12-28T06:14:09+00:00"
-  }
-}
-{
-  "name": "Sophie",
-  "fb_id": "10209883443181895",
-  "workplace": "",
-  "position": {
-    "lat": 50.568645,
-    "lon": 5.5810084,
-    "creation_date": "2017-12-28T03:22:20+00:00",
-    "modification_date": "2017-12-28T03:22:20+00:00"
-  }
-}
-{
-  "name": "Sophie",
-  "fb_id": "10156073972125324",
-  "workplace": "",
-  "position": {
-    "lat": 50.568645,
-    "lon": 5.5810084,
-    "creation_date": "2017-12-27T23:57:42+00:00",
-    "modification_date": "2017-12-27T23:57:42+00:00"
-  }
-}
-{
-  "name": "Julie",
-  "fb_id": "10211279246247399",
-  "workplace": "",
-  "position": {
-    "lat": 50.5686451,
-    "lon": 5.5810082,
-    "creation_date": "2017-12-27T15:51:40+00:00",
-    "modification_date": "2017-12-27T15:51:40+00:00"
-  }
-}
-{
-  "name": "Joh",
-  "fb_id": "1523576231013059",
-  "workplace": "",
-  "position": {
-    "lat": 50.6238172,
-    "lon": 5.5936134,
-    "creation_date": "2017-12-27T14:36:01+00:00",
-    "modification_date": "2017-12-27T14:36:01+00:00"
-  }
-}
-{
-  "name": "Marie",
-  "fb_id": "10207236182214365",
-  "workplace": "",
-  "position": {
-    "lat": 50.6238172,
-    "lon": 5.5936134,
-    "creation_date": "2017-12-27T14:36:01+00:00",
-    "modification_date": "2017-12-27T14:36:01+00:00"
-  }
-}
-{
-  "name": "Ena",
-  "fb_id": "10209135010831913",
-  "workplace": "",
-  "position": {
-    "lat": 50.6238172,
-    "lon": 5.5936134,
-    "creation_date": "2017-12-27T14:36:01+00:00",
-    "modification_date": "2017-12-27T14:36:01+00:00"
-  }
-}
-{
-  "name": "Rendy",
-  "fb_id": "753992594772817",
-  "workplace": "Jules",
-  "position": {
-    "lat": 50.6238172,
-    "lon": 5.5936134,
-    "creation_date": "2017-12-27T14:36:01+00:00",
-    "modification_date": "2017-12-27T14:36:01+00:00"
-  }
-}
-{
-  "name": "Elisa",
-  "fb_id": "10211841291580884",
-  "workplace": "",
-  "position": {
-    "lat": 50.6238172,
-    "lon": 5.5936134,
-    "creation_date": "2017-12-27T14:36:01+00:00",
-    "modification_date": "2017-12-27T14:36:01+00:00"
-  }
-}
-{
-  "name": "Sarah",
-  "fb_id": "10153625550917418",
-  "workplace": "",
-  "position": {
-    "lat": 50.6238172,
-    "lon": 5.5936134,
-    "creation_date": "2017-12-27T14:36:01+00:00",
-    "modification_date": "2017-12-27T14:36:01+00:00"
-  }
-}
-{
-  "name": "Justine",
-  "fb_id": "1107711015923370",
-  "workplace": "",
-  "position": {
-    "lat": 50.6238172,
-    "lon": 5.5936134,
-    "creation_date": "2017-12-27T14:36:01+00:00",
-    "modification_date": "2017-12-27T14:36:01+00:00"
-  }
-}
-{
-  "name": "Laura",
-  "fb_id": "10207272762917134",
-  "workplace": "",
-  "position": {
-    "lat": 50.6238172,
-    "lon": 5.5936134,
-    "creation_date": "2017-12-27T14:36:01+00:00",
-    "modification_date": "2017-12-27T14:36:01+00:00"
-  }
-}
-{
-  "name": "Lindsay",
-  "fb_id": "10153697747797050",
-  "workplace": "",
-  "position": {
-    "lat": 50.6238172,
-    "lon": 5.5936134,
-    "creation_date": "2017-12-27T14:36:01+00:00",
-    "modification_date": "2017-12-27T14:36:01+00:00"
-  }
-}
-#+end_example
 
-#+BEGIN_SRC sh scalar
-cat /home/vince/projects/happnless/stuff/minetes.json | jq '.data[].notifier |  "https://www.facebook.com/\(.fb_id), \(.first_name)"'
+#+BEGIN_SRC bash vector
+http get https://api.happn.fr/api/users/me/crossings  authorization:OAuth=\"eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAACXLQQuCMBjG8e_ynh1sr5tz3kIMQgQhPESEzE1hobhSo4i-e4suz-HH83_DYmbfQ3aGae7c2Lfae7hEcF0dZIBKoKJoCUprCFeGkbSzOszAO50Iy1FBBMvW_c5IUSkpKOPB9GaD7ZuCOHssajLI3S1_bZWp71gS5vJD057GR0kq4qbYhKJ_esiYYFykMUMagdPrH7hKJNLPF1fPTf-tAAAA.TuMSWvu826Z9d94h2Ej_bVHWwb2YFbdWZPlEfAKi_IM\" | jq '.data[].notifier |  "https://www.facebook.com/\(.fb_id)| \(.first_name), | \(.workplace)| \(.id)"'
 #+END_SRC
 
 #+RESULTS:
-| https://www.facebook.com/1542826415799083, Chaimaa   |
-| https://www.facebook.com/10208526781191961, Léa      |
-| https://www.facebook.com/281248465605578, Odissey    |
-| https://www.facebook.com/10210199405045731, Cyrielle |
-| https://www.facebook.com/1760406250877480, Sylvia    |
-| https://www.facebook.com/10209491766512542, Florine  |
-| https://www.facebook.com/443757229167831, Priscilla  |
-| https://www.facebook.com/10208753617413678, Amandine |
-| https://www.facebook.com/10209883443181895, Sophie   |
-| https://www.facebook.com/10156073972125324, Sophie   |
-| https://www.facebook.com/10211279246247399, Julie    |
-| https://www.facebook.com/1523576231013059, Joh       |
-| https://www.facebook.com/10207236182214365, Marie    |
-| https://www.facebook.com/10209135010831913, Ena      |
-| https://www.facebook.com/753992594772817, Rendy      |
-| https://www.facebook.com/10211841291580884, Elisa    |
-| https://www.facebook.com/10153625550917418, Sarah    |
-| https://www.facebook.com/1107711015923370, Justine   |
-| https://www.facebook.com/10207272762917134, Laura    |
-| https://www.facebook.com/10153697747797050, Lindsay  |
+| https://www.facebook.com/1420677677956468  | Elise,     |                          | 21327280239 |
+| https://www.facebook.com/1924953421088213  | Alison,    | null                     | 22011554034 |
+| https://www.facebook.com/10208496060221299 | Emilie,    |                          | 18480571035 |
+| https://www.facebook.com/1542826415799083  | Chaimaa,   | null                     | 21925160549 |
+| https://www.facebook.com/10208526781191961 | Léa,       |                          | 21553708506 |
+| https://www.facebook.com/281248465605578   | Odissey,   |                          | 21234073809 |
+| https://www.facebook.com/10210199405045731 | Cyrielle,  | Silva Hotel Spa-Balmoral | 19625280757 |
+| https://www.facebook.com/1760406250877480  | Sylvia,    |                          | 19430932542 |
+| https://www.facebook.com/10209491766512542 | Florine,   | CHU de Liège             | 21825431650 |
+| https://www.facebook.com/443757229167831   | Priscilla, |                          | 18977599035 |
+| https://www.facebook.com/10208753617413678 | Amandine,  |                          | 21201578436 |
+| https://www.facebook.com/10209883443181895 | Sophie,    |                          | 21000337629 |
+| https://www.facebook.com/10156073972125324 | Sophie,    |                          | 19274585550 |
+| https://www.facebook.com/10211279246247399 | Julie,     |                          | 21296037020 |
+| https://www.facebook.com/1523576231013059  | Joh,       |                          | 21824178119 |
+| https://www.facebook.com/10207236182214365 | Marie,     |                          | 21791769988 |
+| https://www.facebook.com/10209135010831913 | Ena,       |                          | 21755979572 |
+| https://www.facebook.com/753992594772817   | Rendy,     | Jules                    | 21642517784 |
+| https://www.facebook.com/10211841291580884 | Elisa,     |                          | 21615532567 |
+| https://www.facebook.com/10153625550917418 | Sarah,     |                          | 21537960012 |
+| https://www.facebook.com/1107711015923370  | Justine,   |                          | 21118548103 |
+| https://www.facebook.com/10207272762917134 | Laura,     |                          | 21010128160 |
+| https://www.facebook.com/10153697747797050 | Lindsay,   |                          | 21006615188 |
+| https://www.facebook.com/10207706468930321 | Charlotte, |                          | 19406228466 |
+| https://www.facebook.com/1902207076475627  | Nadine,    | Rulot Home Décoration    | 21987754590 |
+| https://www.facebook.com/998297946914828   | Nora,      | null                     | 21941431244 |
+| https://www.facebook.com/10155557451567310 | Perrine,   | Interseniors             | 21792155093 |
+| https://www.facebook.com/10204422650646042 | Christine, | ULg                      | 21937864121 |
+| https://www.facebook.com/10207445210062326 | Manon,     |                          | 21427283027 |
+| https://www.facebook.com/10209564634862650 | Débo,      | CHU de Liège             | 19430400536 |
+| https://www.facebook.com/10209078807996007 | Sophie,    |                          | 21796131836 |
+| https://www.facebook.com/10155211470195376 | Aurélie,   |                          | 21778180507 |
+| https://www.facebook.com/10154344645427206 | Deborah,   |                          | 19587251697 |
+
+* user info
+  #+BEGIN_SRC sh :results scalar
+http get https://api.happn.fr/api/users/21825431650/ authorization:OAuth=\"eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAACXLQQuCMBjG8e_ynh1sr5tz3kIMQgQhPESEzE1hobhSo4i-e4suz-HH83_DYmbfQ3aGae7c2Lfae7hEcF0dZIBKoKJoCUprCFeGkbSzOszAO50Iy1FBBMvW_c5IUSkpKOPB9GaD7ZuCOHssajLI3S1_bZWp71gS5vJD057GR0kq4qbYhKJ_esiYYFykMUMagdPrH7hKJNLPF1fPTf-tAAAA.TuMSWvu826Z9d94h2Ej_bVHWwb2YFbdWZPlEfAKi_IM\"
+  #+END_SRC
+
+  #+RESULTS:
+  : {"success":true,"status":200,"error":null,"data":{"id":"21825431650","fb_id":"10209491766512542","twitter_id":null,"role":"CLIENT","type":"client","clickable_message_link":false,"name":null,"first_name":"Florine","nickname":null,"display_name":"Florine","gender":"female","workplace":"CHU de Li\u00e8ge","distance":null},"error_code":0}
+
+#+BEGIN_SRC bash vector
+cat /home/vince/projects/happnless/data/minettes.json | jq '.[] | "[[\(.facebook)][\(.first_name)]] | \(.age) | \(.id) | \(.workplace), | \(.job) | [[/home/vince/projects/happnless/data/images/\(.first_name)-\(.id)-1.jpg][im1]], [[/home/vince/projects/happnless/data/images/\(.first_name)-\(.id)-2.jpg][im2]], [[/home/vince/projects/happnless/data/images/\(.first_name)-\(.id)-3.jpg][im3]], [[/home/vince/projects/happnless/data/images/\(.first_name)-\(.id)-4.jpg][im4]] "'
+#+END_SRC
+
+#+RESULTS:
+| [[https://www.facebook.com/1420677677956468][Elise]]     | 27 | 21327280239 | ,                         |                                  | [[file:/home/vince/projects/happnless/data/images/Elise-21327280239-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Elise-21327280239-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Elise-21327280239-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Elise-21327280239-4.jpg][im4]] |
+| [[https://www.facebook.com/1924953421088213][Alison]]    | 22 | 22011554034 | null,                     | null                             | [[file:/home/vince/projects/happnless/data/images/Alison-22011554034-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Alison-22011554034-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Alison-22011554034-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Alison-22011554034-4.jpg][im4]] |
+| [[https://www.facebook.com/10208496060221299][Emilie]]    | 29 | 18480571035 | ,                         |                                  | [[file:/home/vince/projects/happnless/data/images/Emilie-18480571035-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Emilie-18480571035-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Emilie-18480571035-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Emilie-18480571035-4.jpg][im4]] |
+| [[https://www.facebook.com/1542826415799083][Chaimaa]]   | 25 | 21925160549 | null,                     | null                             | [[file:/home/vince/projects/happnless/data/images/Chaimaa-21925160549-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Chaimaa-21925160549-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Chaimaa-21925160549-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Chaimaa-21925160549-4.jpg][im4]] |
+| [[https://www.facebook.com/10208526781191961][Léa]]       | 23 | 21553708506 | ,                         |                                  | [[file:/home/vince/projects/happnless/data/images/Léa-21553708506-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Léa-21553708506-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Léa-21553708506-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Léa-21553708506-4.jpg][im4]] |
+| [[https://www.facebook.com/281248465605578][Odissey]]   | 19 | 21234073809 | ,                         | Vendeur                          | [[file:/home/vince/projects/happnless/data/images/Odissey-21234073809-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Odissey-21234073809-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Odissey-21234073809-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Odissey-21234073809-4.jpg][im4]] |
+| [[https://www.facebook.com/10210199405045731][Cyrielle]]  | 25 | 19625280757 | Silva Hotel Spa-Balmoral, | Banquet Sales Manager            | [[file:/home/vince/projects/happnless/data/images/Cyrielle-19625280757-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Cyrielle-19625280757-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Cyrielle-19625280757-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Cyrielle-19625280757-4.jpg][im4]] |
+| [[https://www.facebook.com/1760406250877480][Sylvia]]    | 27 | 19430932542 | ,                         | Infirmière                       | [[file:/home/vince/projects/happnless/data/images/Sylvia-19430932542-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Sylvia-19430932542-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Sylvia-19430932542-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Sylvia-19430932542-4.jpg][im4]] |
+| [[https://www.facebook.com/10209491766512542][Florine]]   | 23 | 21825431650 | CHU de Liège,             | Technologue en imagerie médicale | [[file:/home/vince/projects/happnless/data/images/Florine-21825431650-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Florine-21825431650-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Florine-21825431650-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Florine-21825431650-4.jpg][im4]] |
+| [[https://www.facebook.com/443757229167831][Priscilla]] | 21 | 18977599035 | ,                         | null                             | [[file:/home/vince/projects/happnless/data/images/Priscilla-18977599035-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Priscilla-18977599035-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Priscilla-18977599035-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Priscilla-18977599035-4.jpg][im4]] |
+| [[https://www.facebook.com/10208753617413678][Amandine]]  | 26 | 21201578436 | ,                         | Infirmière                       | [[file:/home/vince/projects/happnless/data/images/Amandine-21201578436-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Amandine-21201578436-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Amandine-21201578436-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Amandine-21201578436-4.jpg][im4]] |
+| [[https://www.facebook.com/10209883443181895][Sophie]]    | 24 | 21000337629 | ,                         |                                  | [[file:/home/vince/projects/happnless/data/images/Sophie-21000337629-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Sophie-21000337629-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Sophie-21000337629-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Sophie-21000337629-4.jpg][im4]] |
+| [[https://www.facebook.com/10156073972125324][Sophie]]    | 31 | 19274585550 | ,                         | null                             | [[file:/home/vince/projects/happnless/data/images/Sophie-19274585550-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Sophie-19274585550-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Sophie-19274585550-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Sophie-19274585550-4.jpg][im4]] |
+| [[https://www.facebook.com/10211279246247399][Julie]]     | 23 | 21296037020 | ,                         |                                  | [[file:/home/vince/projects/happnless/data/images/Julie-21296037020-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Julie-21296037020-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Julie-21296037020-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Julie-21296037020-4.jpg][im4]] |
+| [[https://www.facebook.com/1523576231013059][Joh]]       | 29 | 21824178119 | ,                         |                                  | [[file:/home/vince/projects/happnless/data/images/Joh-21824178119-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Joh-21824178119-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Joh-21824178119-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Joh-21824178119-4.jpg][im4]] |
+| [[https://www.facebook.com/10207236182214365][Marie]]     | 25 | 21791769988 | ,                         |                                  | [[file:/home/vince/projects/happnless/data/images/Marie-21791769988-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Marie-21791769988-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Marie-21791769988-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Marie-21791769988-4.jpg][im4]] |
+| [[https://www.facebook.com/10209135010831913][Ena]]       | 25 | 21755979572 | ,                         |                                  | [[file:/home/vince/projects/happnless/data/images/Ena-21755979572-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Ena-21755979572-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Ena-21755979572-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Ena-21755979572-4.jpg][im4]] |
+| [[https://www.facebook.com/753992594772817][Rendy]]     | 27 | 21642517784 | Jules,                    | Vendeuse/conseillère             | [[file:/home/vince/projects/happnless/data/images/Rendy-21642517784-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Rendy-21642517784-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Rendy-21642517784-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Rendy-21642517784-4.jpg][im4]] |
+| [[https://www.facebook.com/10211841291580884][Elisa]]     | 21 | 21615532567 | ,                         | étudiante                        | [[file:/home/vince/projects/happnless/data/images/Elisa-21615532567-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Elisa-21615532567-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Elisa-21615532567-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Elisa-21615532567-4.jpg][im4]] |
+| [[https://www.facebook.com/10153625550917418][Sarah]]     | 28 | 21537960012 | ,                         | Project Engineer                 | [[file:/home/vince/projects/happnless/data/images/Sarah-21537960012-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Sarah-21537960012-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Sarah-21537960012-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Sarah-21537960012-4.jpg][im4]] |
+| [[https://www.facebook.com/1107711015923370][Justine]]   | 23 | 21118548103 | ,                         | Management Student               | [[file:/home/vince/projects/happnless/data/images/Justine-21118548103-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Justine-21118548103-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Justine-21118548103-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Justine-21118548103-4.jpg][im4]] |
+| [[https://www.facebook.com/10207272762917134][Laura]]     | 26 | 21010128160 | ,                         | Infirmière                       | [[file:/home/vince/projects/happnless/data/images/Laura-21010128160-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Laura-21010128160-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Laura-21010128160-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Laura-21010128160-4.jpg][im4]] |
+| [[https://www.facebook.com/10153697747797050][Lindsay]]   | 32 | 21006615188 | ,                         | Secretary                        | [[file:/home/vince/projects/happnless/data/images/Lindsay-21006615188-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Lindsay-21006615188-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Lindsay-21006615188-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Lindsay-21006615188-4.jpg][im4]] |
+| [[https://www.facebook.com/10207706468930321][Charlotte]] | 25 | 19406228466 | ,                         |                                  | [[file:/home/vince/projects/happnless/data/images/Charlotte-19406228466-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Charlotte-19406228466-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Charlotte-19406228466-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Charlotte-19406228466-4.jpg][im4]] |
+| [[https://www.facebook.com/1902207076475627][Nadine]]    | 56 | 21987754590 | Rulot Home Décoration,    | null                             | [[file:/home/vince/projects/happnless/data/images/Nadine-21987754590-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Nadine-21987754590-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Nadine-21987754590-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Nadine-21987754590-4.jpg][im4]] |
+| [[https://www.facebook.com/998297946914828][Nora]]      | 20 | 21941431244 | null,                     | Université de Liège              | [[file:/home/vince/projects/happnless/data/images/Nora-21941431244-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Nora-21941431244-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Nora-21941431244-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Nora-21941431244-4.jpg][im4]] |
+| [[https://www.facebook.com/10155557451567310][Perrine]]   | 28 | 21792155093 | Interseniors,             | Secrétaire                       | [[file:/home/vince/projects/happnless/data/images/Perrine-21792155093-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Perrine-21792155093-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Perrine-21792155093-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Perrine-21792155093-4.jpg][im4]] |
+| [[https://www.facebook.com/10204422650646042][Christine]] | 27 | 21937864121 | ULg,                      | Doctorante                       | [[file:/home/vince/projects/happnless/data/images/Christine-21937864121-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Christine-21937864121-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Christine-21937864121-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Christine-21937864121-4.jpg][im4]] |
+| [[https://www.facebook.com/10207445210062326][Manon]]     | 27 | 21427283027 | ,                         |                                  | [[file:/home/vince/projects/happnless/data/images/Manon-21427283027-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Manon-21427283027-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Manon-21427283027-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Manon-21427283027-4.jpg][im4]] |
+| [[https://www.facebook.com/10209564634862650][Débo]]      | 24 | 19430400536 | CHU de Liège,             |                                  | [[file:/home/vince/projects/happnless/data/images/Débo-19430400536-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Débo-19430400536-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Débo-19430400536-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Débo-19430400536-4.jpg][im4]] |
+| [[https://www.facebook.com/10209078807996007][Sophie]]    | 22 | 21796131836 | ,                         |                                  | [[file:/home/vince/projects/happnless/data/images/Sophie-21796131836-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Sophie-21796131836-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Sophie-21796131836-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Sophie-21796131836-4.jpg][im4]] |
+| [[https://www.facebook.com/10155211470195376][Aurélie]]   | 30 | 21778180507 | ,                         | Juriste                          | [[file:/home/vince/projects/happnless/data/images/Aurélie-21778180507-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Aurélie-21778180507-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Aurélie-21778180507-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Aurélie-21778180507-4.jpg][im4]] |
+| [[https://www.facebook.com/10154344645427206][Deborah]]   | 28 | 19587251697 | ,                         |                                  | [[file:/home/vince/projects/happnless/data/images/Deborah-19587251697-1.jpg][im1]], [[file:/home/vince/projects/happnless/data/images/Deborah-19587251697-2.jpg][im2]], [[file:/home/vince/projects/happnless/data/images/Deborah-19587251697-3.jpg][im3]], [[file:/home/vince/projects/happnless/data/images/Deborah-19587251697-4.jpg][im4]] |
+
+
+
+
+#+BEGIN_SRC python
+import requests
+api_url = 'https://api.happn.fr/api/'
+url1 = 'https://api.happn.fr/api/users/me/crossings'
+url2 = 'https://api.happn.fr/api/users/19587251697/crossings'
+token = 'eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAACXLzQqCQBRA4Xe5ay_MvzPuQgxCBCFcRISMowMTipYaRfTuGW0_znnD7Mapg-QMw9iEvqvtNMElgusSIAEmrHFeKSRSKxSeEmyk52i0VpxI23jKIIJ5bX4xI8yYWBIqNrNru9m-yjC0x6xEH-9u6WstXHlnOdKQHqr61D9yLDAM3G1H95wgoZIKpYxWJIJglz9IzYUiny-wAjd_rQAAAA.b0pcrC4_MvQAy87VrZRHsZImbT770vnFNgcB2DY1O40'
+
+
+headers = {
+    'User-Agent': 'Happn/19.1.0 AndroidSDK/19',
+    'platform': 'android',
+    'Host':'api.happn.fr',
+    'connection' : 'Keep-Alive',
+    'Accept-Encoding':'gzip',
+    'Authorization' : 'OAuth="{}"'.format(token),
+}
+
+params = {
+    'fields': 'id,nb_times,modification_date,notifier.fields(my_relation,is_charmed,availability.fields(id,availability_type.fields(picto.fields(id,is_default),color,emoji,title,tagline,duration,label,type),time_left),last_invite_received,picture.fields(url,id,is_default).width(585).mode(1).height(927.36),school,is_accepted,profiles.limit(9).fields(url,id,is_default).width(1242).mode(1).height(2208),type,job,id,gender,has_charmed_me,workplace,distance,age,already_charmed,social_synchronization.fields(facebook.fields(id)),first_name,is_invited)',
+} 
+
+r = requests.get(url1, headers=headers, params=params)
+ ?fields=id,nb_times,modification_date,notifier.fields(my_relation,is_charmed,availability.fields(id,availability_type.fields(picto.fields(id,is_default),color,emoji,title,tagline,duration,label,type),time_left),last_invite_received,picture.fields(url,id,is_default).width(585).mode(1).height(927.36),school,is_accepted,profiles.limit(9).fields(url,id,is_default).width(1242).mode(1).height(2208),type,job,id,gender,has_charmed_me,workplace,distance,age,already_charmed,social_synchronization.fields(facebook.fields(id)),first_name,is_invited) &limit=21
+
+#+END_SRC
+
+#+RESULTS:
