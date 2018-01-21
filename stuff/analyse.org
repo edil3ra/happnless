@@ -1212,47 +1212,6 @@ cat /home/vince/projects/happnless/stuff/minetes.json | jq '.data[].notifier | {
 }
 #+end_example
 
-** facebook id
-
-#+BEGIN_SRC bash vector
-http get https://api.happn.fr/api/users/me/crossings  authorization:OAuth=\"eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAACXLQQuCMBjG8e_ynh1sr5tz3kIMQgQhPESEzE1hobhSo4i-e4suz-HH83_DYmbfQ3aGae7c2Lfae7hEcF0dZIBKoKJoCUprCFeGkbSzOszAO50Iy1FBBMvW_c5IUSkpKOPB9GaD7ZuCOHssajLI3S1_bZWp71gS5vJD057GR0kq4qbYhKJ_esiYYFykMUMagdPrH7hKJNLPF1fPTf-tAAAA.TuMSWvu826Z9d94h2Ej_bVHWwb2YFbdWZPlEfAKi_IM\" | jq '.data[].notifier |  "https://www.facebook.com/\(.fb_id)| \(.first_name), | \(.workplace)| \(.id)"'
-#+END_SRC
-
-#+RESULTS:
-| https://www.facebook.com/1420677677956468  | Elise,     |                          | 21327280239 |
-| https://www.facebook.com/1924953421088213  | Alison,    | null                     | 22011554034 |
-| https://www.facebook.com/10208496060221299 | Emilie,    |                          | 18480571035 |
-| https://www.facebook.com/1542826415799083  | Chaimaa,   | null                     | 21925160549 |
-| https://www.facebook.com/10208526781191961 | Léa,       |                          | 21553708506 |
-| https://www.facebook.com/281248465605578   | Odissey,   |                          | 21234073809 |
-| https://www.facebook.com/10210199405045731 | Cyrielle,  | Silva Hotel Spa-Balmoral | 19625280757 |
-| https://www.facebook.com/1760406250877480  | Sylvia,    |                          | 19430932542 |
-| https://www.facebook.com/10209491766512542 | Florine,   | CHU de Liège             | 21825431650 |
-| https://www.facebook.com/443757229167831   | Priscilla, |                          | 18977599035 |
-| https://www.facebook.com/10208753617413678 | Amandine,  |                          | 21201578436 |
-| https://www.facebook.com/10209883443181895 | Sophie,    |                          | 21000337629 |
-| https://www.facebook.com/10156073972125324 | Sophie,    |                          | 19274585550 |
-| https://www.facebook.com/10211279246247399 | Julie,     |                          | 21296037020 |
-| https://www.facebook.com/1523576231013059  | Joh,       |                          | 21824178119 |
-| https://www.facebook.com/10207236182214365 | Marie,     |                          | 21791769988 |
-| https://www.facebook.com/10209135010831913 | Ena,       |                          | 21755979572 |
-| https://www.facebook.com/753992594772817   | Rendy,     | Jules                    | 21642517784 |
-| https://www.facebook.com/10211841291580884 | Elisa,     |                          | 21615532567 |
-| https://www.facebook.com/10153625550917418 | Sarah,     |                          | 21537960012 |
-| https://www.facebook.com/1107711015923370  | Justine,   |                          | 21118548103 |
-| https://www.facebook.com/10207272762917134 | Laura,     |                          | 21010128160 |
-| https://www.facebook.com/10153697747797050 | Lindsay,   |                          | 21006615188 |
-| https://www.facebook.com/10207706468930321 | Charlotte, |                          | 19406228466 |
-| https://www.facebook.com/1902207076475627  | Nadine,    | Rulot Home Décoration    | 21987754590 |
-| https://www.facebook.com/998297946914828   | Nora,      | null                     | 21941431244 |
-| https://www.facebook.com/10155557451567310 | Perrine,   | Interseniors             | 21792155093 |
-| https://www.facebook.com/10204422650646042 | Christine, | ULg                      | 21937864121 |
-| https://www.facebook.com/10207445210062326 | Manon,     |                          | 21427283027 |
-| https://www.facebook.com/10209564634862650 | Débo,      | CHU de Liège             | 19430400536 |
-| https://www.facebook.com/10209078807996007 | Sophie,    |                          | 21796131836 |
-| https://www.facebook.com/10155211470195376 | Aurélie,   |                          | 21778180507 |
-| https://www.facebook.com/10154344645427206 | Deborah,   |                          | 19587251697 |
-
 * user info
   #+BEGIN_SRC sh :results scalar
 http get https://api.happn.fr/api/users/21825431650/ authorization:OAuth=\"eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAACXLQQuCMBjG8e_ynh1sr5tz3kIMQgQhPESEzE1hobhSo4i-e4suz-HH83_DYmbfQ3aGae7c2Lfae7hEcF0dZIBKoKJoCUprCFeGkbSzOszAO50Iy1FBBMvW_c5IUSkpKOPB9GaD7ZuCOHssajLI3S1_bZWp71gS5vJD057GR0kq4qbYhKJ_esiYYFykMUMagdPrH7hKJNLPF1fPTf-tAAAA.TuMSWvu826Z9d94h2Ej_bVHWwb2YFbdWZPlEfAKi_IM\"
