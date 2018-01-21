@@ -46,6 +46,13 @@ def view_simple(users):
     } for user in users]
 
 
+def view_facebook(users):
+    return [{
+        'first_name': user['notifier']['first_name'],
+        'facebook': 'https://www.facebook.com/{}'.format(user['notifier']['fb_id']),
+    } for user in users]
+    
+
 def get_images_by_id(users):
     return {'{}-{}'.format(user['notifier']['first_name'], user['notifier']['id']): [profile['url'] for profile in user['notifier']['profiles']]
             for user in users}
@@ -57,7 +64,8 @@ def save_minettes(minettes, filename='minettes.json'):
     open(path, 'w').write(j)
 
 
-def download_image(users):
+def download_image(users, download_path):
+    download_path = download_path or IMAGE_FOLDER
     users_images = get_images_by_id(users)
     for key, images in users_images.items():
         for index, image in enumerate(images):

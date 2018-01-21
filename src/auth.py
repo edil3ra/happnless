@@ -72,7 +72,7 @@ def login(email=None, password=None, fb_token=None):
         password (str): facebook password
         fb_token (str): fb_token
     Returns:
-        (str, str): acces_token, user_id
+        (str): acces_token, 
     '''
 
     if fb_token is None:
@@ -83,7 +83,7 @@ def login(email=None, password=None, fb_token=None):
     if fb_token is None:
         raise Exception('missing fb_token ')
 
-    return get_happn_token(fb_token)
+    return get_happn_token(fb_token)[0]
 
 
 def write_token(token):
