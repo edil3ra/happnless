@@ -1,3 +1,4 @@
 reference/*
 data/*
 conf/token.txt
+*/__pycache__/*

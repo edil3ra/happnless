@@ -1,9 +1,9 @@
 import requests
 import logging
 import robobrowser
-import re
 import os.path
 import yaml
+
 
 conf_path = os.path.join(os.path.dirname(__file__), '..', 'conf', 'config.yaml')
 token_path = os.path.join(os.path.dirname(__file__), '..', 'conf', 'token.txt')
@@ -11,13 +11,12 @@ conf = yaml.load(open(conf_path))
 
 
 headers = {
-    'User-Agent':'Happn/19.1.0 AndroidSDK/19',
+    'User-Agent': 'Happn/19.1.0 AndroidSDK/19',
     'platform': 'android',
-    'Host':'api.happn.fr',
-    'connection' : 'Keep-Alive',
-    'Accept-Encoding':'gzip'
+    'Host': 'api.happn.fr',
+    'connection': 'Keep-Alive',
+    'Accept-Encoding': 'gzip'
 }
-
 
 
 def get_fbtoken(email, password):
@@ -27,7 +26,7 @@ def get_fbtoken(email, password):
     login_form["pass"] = password
     login_form["email"] = email
     rb.submit_form(login_form)
-    
+
     token_url = rb.response.history[-2].url
     fb_token = token_url.split('=')[1].split('&')[0]
 
@@ -72,14 +71,14 @@ def login(email=None, password=None, fb_token=None):
         password (str): facebook password
         fb_token (str): fb_token
     Returns:
-        (str): acces_token, 
+        (str): acces_token,
     '''
 
     if fb_token is None:
         if email is None or password is None:
             raise Exception('missing facebook email and password email')
         fb_token = get_fbtoken(email, password)
-        
+
     if fb_token is None:
         raise Exception('missing fb_token ')
 
@@ -88,11 +87,9 @@ def login(email=None, password=None, fb_token=None):
 
 def write_token(token):
     open(token_path, 'w').write(token)
-    
+
 
 def read_token():
     if not os.path.exists(token_path):
         raise Exception('token does not exist yet')
     return open(token_path, 'r').read()
-    
-    

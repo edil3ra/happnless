@@ -10,14 +10,13 @@ DATA_FOLDER = os.path.abspath(os.path.join(__file__, '..', 'data'))
 IMAGE_FOLDER = os.path.abspath(os.path.join(__file__, '..', 'data', 'images'))
 TOKEN = read_token()
 
-
 headers = {
     'User-Agent': 'Happn/19.1.0 AndroidSDK/19',
     'platform': 'android',
     'Host': 'api.happn.fr',
     'connection': 'Keep-Alive',
     'Accept-Encoding': 'gzip',
-    'Content-Type' : 'application/json',
+    'Content-Type': 'application/json',
     'Authorization': 'OAuth="{}"'.format(TOKEN)
 }
 
@@ -51,7 +50,7 @@ def view_facebook(users):
         'first_name': user['notifier']['first_name'],
         'facebook': 'https://www.facebook.com/{}'.format(user['notifier']['fb_id']),
     } for user in users]
-    
+
 
 def get_images_by_id(users):
     return {'{}-{}'.format(user['notifier']['first_name'], user['notifier']['id']): [profile['url'] for profile in user['notifier']['profiles']]
@@ -73,5 +72,3 @@ def download_image(users, download_path):
             filename = '{}-{}.jpg'.format(key, index)
             path = os.path.join(IMAGE_FOLDER, filename)
             open(path, 'wb').write(result)
-
-    

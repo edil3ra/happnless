@@ -1,8 +1,13 @@
 import click
 import auth
-import features
 import logging
 import sys
+import os
+import json
+
+
+conf_path = os.path.join(os.path.dirname(__file__), '..', 'conf', 'config.yaml')
+token_path = os.path.join(os.path.dirname(__file__), '..', 'conf', 'token.txt')
 
 LOGGING_LEVEL = [
     logging.INFO,
@@ -11,7 +16,7 @@ LOGGING_LEVEL = [
 ]
 
 @click.command()
-@click.option('--email', '-e', help='facebook email', required=False)
+@click.option('--email', '-m', help='facebook email', required=False)
 @click.option('--password', '-p',
               help='password of your facebook account',
               required=False)
@@ -28,8 +33,8 @@ LOGGING_LEVEL = [
               help='pathname to save your recommendations list',
               required=False)
 @click.option('--view', '-l',
-              type=click.Choice(['complete', 'simple', 'facebook']),
-              default='complete',
+              type=click.Choice(['default', 'complete', 'simple', 'facebook']),
+              default='default',
               help='get a list of you recommendations')
 @click.option('--verbose', '-v', count=True, default=0)
 def main(email,
@@ -47,21 +52,39 @@ def main(email,
         logging.disable = True
 
     if token:
-        click.echo('you provide your own token, if it doesn\t work try with your facebook email password')
+        click.echo('''
+        you provide your own token, if it doesn\t
+        work try with your facebook email password
+        ''')
 
     if email and password:
         token = auth.login(email, password)
-        click.echo('create a fresh token with facebook email address and password')
+        click.echo('''
+        create a fresh token with
+        facebook email address and password
+        ''')
 
     if token:
         auth.write_token(token)
         click.echo('generate a token: {} and save it to: {}'.format(token, 'conf/token.txt'))
 
+    if not os.path.exists(token_path):
+        click.echo('You never created a token, create a token first please, see readme')
+        sys.exit()
+
+    # make sure it's import after the new token was setted
+    import features
+
     try:
         recomendations_raw = features.recommendations()
     except:
-        click.echo('your token has probably expired, you need to provide your creditentials either by your facebook account and password or with your own token, if don\t trust the code source the application does nothing with your facebook account and password, expect a call to the happn api to get a token')
-        click.echo('python3 cli.py --email example@gmail.com --password password')
+        click.echo('''
+        Your token has probably expired\n
+        You need to provide your creditentials either by your facebook account
+        and password or with your own token)
+        Ex: click.echo('python3 cli.py --email example@gmail.com
+        --password password
+        ''')
         sys.exit()
 
     if download:
@@ -70,19 +93,24 @@ def main(email,
 
     recommendations_output = ''
     if view == 'complete':
-        recommendations_output = recomendations_raw
+        recommendations_output = json.dumps(recomendations_raw, indent=4)
     elif view == 'simple':
-        recommendations_output = features.view_simple(recomendations_raw)
+        recommendations_output = json.dumps(
+            features.view_simple(recomendations_raw),
+            indent=4
+        )
     elif view == 'facebook':
-        recommendations_output = features.facebook_view(recommendations_output)
+        recommendations_output = json.dumps(
+            features.view_facebook(recomendations_raw),
+            indent=4
+        )
     else:
-        recommendations_output = recomendations_raw
+        recommendations_output = len(recomendations_raw)
 
     if save_path:
         features.save_minettes(recommendations_output, save_path)
 
     click.echo(recommendations_output)
-
 
 
 if __name__ == '__main__':
